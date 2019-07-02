@@ -41,7 +41,7 @@ parser.add_argument('--max_gradient_norm', dest='max_gradient_norm',
                   default=5, type=float)
 parser.add_argument('--iterations', dest='iterations',
                   help='Iterations to train for.',
-                  default=1e5, type=int)
+                  default=100000, type=int)
 parser.add_argument('--test_every', dest='test_every',
                   help='',
                   default=200, type=int)
@@ -178,6 +178,8 @@ def train():
       # === Training step ===
       encoder_inputs, decoder_inputs, decoder_outputs = model.get_batch( train_set, not args.omit_one_hot )
       encoder_inputs = torch.from_numpy(encoder_inputs).float()
+      # Rebecca todo: Add attention mechanism here using decoder_outputs and encoder hidden states
+      # such that decoder input becomes the output of the attention mechanism
       decoder_inputs = torch.from_numpy(decoder_inputs).float()
       decoder_outputs = torch.from_numpy(decoder_outputs).float()
       if not args.use_cpu:

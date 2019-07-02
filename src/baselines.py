@@ -137,7 +137,7 @@ def main():
   FLAGS.batch_size = 8
   FLAGS.learning_rate = 0.005
   FLAGS.learning_rate_decay_factor = 1
-  summaries_dir = "./log/"
+  #summaries_dir = "./log/"
   FLAGS.loss_to_use = "sampling_based"
   FLAGS.omit_one_hot = True,
   FLAGS.residual_velocities = False,
@@ -156,7 +156,6 @@ def main():
         FLAGS.batch_size,
         FLAGS.learning_rate,
         FLAGS.learning_rate_decay_factor,
-        summaries_dir,
         FLAGS.loss_to_use,
         len( actions ),
         not FLAGS.omit_one_hot,

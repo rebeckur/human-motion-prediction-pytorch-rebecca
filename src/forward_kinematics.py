@@ -3,7 +3,7 @@ from __future__ import division
 import numpy as np
 import h5py
 import matplotlib
-import matplotlib.pyplot as plt
+import matplotlib.pyplot as plt # Need to install tkinter
 import matplotlib.animation as animation
 from mpl_toolkits.mplot3d import Axes3D
 import viz
